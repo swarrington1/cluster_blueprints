@@ -1,7 +1,10 @@
 #!/bin/bash
 
-#input=/gpfs01/share/HCP/HCPyoung_adult/Diffusion/all_subjects
-input=/gpfs01/share/HCP/HCPyoung_adult/scripts/blueprinting/templist
+# bash submitBP.sh /gpfs01/share/HCP/HCPyoung_adult/Diffusion/all_subjects imghmemq
+
+input=$1
+cpu=$2
+
 scriptsDir=/gpfs01/share/HCP/HCPyoung_adult/scripts/blueprinting
 
 # Create and enter a job submission directory
@@ -22,7 +25,7 @@ mkdir ${subDir}; cd ${subDir}
 
 for subID in `cat ${input}`; do
     echo "${subID}"
-    bash jobsub -j -q imgcomputeq -p 1 -t 06:00:00 -m 80 -s ${subID}_bp -c "bash ${scriptsDir}/matlab_job.sh ${subID}"
+    bash jobsub -j -q $cpu -p 1 -t 09:00:00 -m 80 -s ${subID}_bp -c "bash ${scriptsDir}/matlab_job.sh ${subID}"
     sleep 180
 done
 

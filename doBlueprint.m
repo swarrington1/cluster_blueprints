@@ -59,7 +59,7 @@ for s=1:2
     
     %% Loop through Ptx tracts
     disp('Processing tracts...')
-    PtxFolder=[DiffStudyFolder '/' num2str(subID) '/MNINonLinear/Results/autoPtx/tracts'];
+    PtxFolder=[DiffStudyFolder '/' num2str(subID) '/MNINonLinear/Results/xtract/tracts'];
     tractMap=cell(1,size(tracts,2));
     for i=1:size(tracts,2)
         t_in=[PtxFolder '/' tracts{i} '/densityNorm'];

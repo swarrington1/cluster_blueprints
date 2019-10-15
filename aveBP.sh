@@ -13,7 +13,7 @@ StudyFolder=/gpfs01/share/HCP/HCPyoung_adult/Diffusion
 
 tractNames=${scriptsDir}/blueprint_tracts
 
-thr=0.10 # as a fraction, 0.05 (i.e. 5%) based on what looks best
+thr=0.05 # as a fraction, 0.05 (i.e. 5%) based on what looks best
 
 output=${StudyFolder}/blueprint_atlas
 if [ ! -d ${output} ]; then
